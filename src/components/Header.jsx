@@ -6,7 +6,7 @@ export default function Header() {
       <img className="logo" src="src/assets/iteration-1/logo.svg"/>
       <p>fırsatı kaçırma</p>
       <h1 className="ana-baslık">KOD ACIKTIRIR <br/> PİZZA, DOYURUR</h1>
-      <button className="btn">ACIKTIM</button>
+      <a href='/siparis'><button className="btn">ACIKTIM</button></a>
       
     </header>
     )

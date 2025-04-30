@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  
+  .order-container {
+    background-color: #CE2829;
+
+    width: 100%;
+  }
+  .logo {
+    width: 25%;
+  }
+  .breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5 rem;
+    color: white;
+    text-decoration: none;
+  }
+  .breadcrumb a {
+    color: white
+  }
+  .order-main {
+    background-color: #FAF7F2;
+  }
