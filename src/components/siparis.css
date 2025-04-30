@@ -27,3 +27,11 @@
   .order-main {
     background-color: #FAF7F2;
   }
+  .order-form {
+     background-color: #FAF7F2;
+  }
+  
+  .order-boyut {
+    display: flex;
+    flex-direction: column;
+  }

@@ -1,5 +1,6 @@
 import React from "react";
 import './siparis.css'
+import { Button, DropdownItem, DropdownMenu, DropdownToggle, Form, FormGroup, Input, Label, UncontrolledDropdown } from "reactstrap";
 
 const toppings = [
     'Pepperoni',
@@ -41,7 +42,65 @@ export default function Siparis() {
           Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.
         </p>
         </main>
-        
+        <Form className="order-form">
+            <FormGroup tag="fieldset" className="order-boyut">
+                <legend>
+                Boyut Seç
+                </legend>
+                <FormGroup check>
+                <Input
+                    name="küçük"
+                    type="radio"
+                />
+                {' '}
+                <Label check>
+                    Küçük
+                </Label>
+                </FormGroup>
+                <FormGroup check>
+                <Input
+                    name="orta"
+                    type="radio"
+                />
+                {' '}
+                <Label check>
+                    Orta
+                </Label>
+                </FormGroup>
+                <FormGroup check>
+                <Input
+                    name="büyük"
+                    type="radio"
+                />
+                {' '}
+                <Label check>
+                    Büyük
+                </Label>
+                </FormGroup>
+            </FormGroup>
+
+            <UncontrolledDropdown group>
+                <Button color="primary">
+                    Hamur Seç
+                </Button>
+                <DropdownToggle
+                    caret
+                    color="primary"
+                />
+                <DropdownMenu>
+                    <DropdownItem>
+                    İncecik Hamur
+                    </DropdownItem>
+                    <DropdownItem>
+                    Normal Hamur
+                    </DropdownItem>
+                    <DropdownItem>
+                    Kalın Hamur
+                    </DropdownItem>
+                </DropdownMenu>
+                </UncontrolledDropdown>
+        </Form>
+          
       </div>
     )
 }
