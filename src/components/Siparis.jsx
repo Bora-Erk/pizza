@@ -55,7 +55,6 @@ const OrderPizza = () => {
         </Breadcrumb>
         </div>
         <div className='megaDiv'>
-        <div className="pizza-bilgileri">
             <h5 className='pizza-baslik'>Position Absolute Acı Pizza</h5>
             <div className='pizza-price'>
                 <h3><strong>{basePrice}</strong>₺</h3>
@@ -69,7 +68,7 @@ const OrderPizza = () => {
           domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
           odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
           hamurdan oluşan İtalyan kökenli lezzetli bir yemektir.</p>
-        </div>
+        
 
         <Form onSubmit={handleSubmit}>
 

@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 25vw;
 }
 .pizza-rating {
     display: flex;
@@ -40,10 +41,12 @@ body {
 }
 .description {
     padding-top: 1rem;
+    width: 25vw;
 }
 .megaDiv {
-    padding-left: 37rem;
-    padding-right: 37rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .form-row {
     display: flex;
