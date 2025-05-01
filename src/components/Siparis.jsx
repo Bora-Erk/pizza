@@ -6,6 +6,7 @@ import {
   Button, Card, CardBody
 } from 'reactstrap';
 import './siparis.css'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const TOPPINGS = [
@@ -153,7 +154,9 @@ const OrderPizza = () => {
                 <h5>Sipariş Toplamı</h5>
                 <p>Seçimler: {selectionsCost}₺</p>
                 <h4 className="text-danger">Toplam: {totalPrice}₺</h4>
-                <Button color="warning" block>SİPARİŞ VER</Button>
+                <Link to='siparisAlındı'>
+                    <Button className='siparisVerButton'color="warning" block>SİPARİŞ VER</Button>
+                </Link>
                 </CardBody>
             </Card>
             </div>

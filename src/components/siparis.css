@@ -81,7 +81,8 @@ body {
     gap: 1rem;                
   }
   
- .miktar-button {
+ .siparisVerButton {
+    text-decoration: none;
 
  } 
   .miktar {

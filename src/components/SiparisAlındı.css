@@ -1,0 +1,27 @@
+.siparis-alindi {
+    display: flex;
+    background-color: #CE2829;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    height:  100vh;
+    width: 100%;
+}
+.siparis-alindi img {
+    position: absolute;
+    top: 2rem;                 
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 180px;          
+    height: auto;
+  }
+  
+  .siparis-alindi h1 {
+    margin: 0;
+    font-family: 'Barlow', cursive;
+    font-weight: lighter;
+    font-size: 3rem;          
+    line-height: 1.2;
+  }

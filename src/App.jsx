@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 import Siparis from './components/Siparis'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SiparisAlındı from './components/SiparisAlındı'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/siparis">
             <Siparis/>
+          </Route>
+          <Route path="/siparisAlındı">
+            <SiparisAlındı/>
           </Route>
         </Switch>
         <Footer/>
