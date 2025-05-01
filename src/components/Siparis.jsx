@@ -1,106 +1,165 @@
-import React from "react";
+import React, { useState } from 'react';
+import {
+  Row, Col,
+  Breadcrumb, BreadcrumbItem,
+  Form, FormGroup, Label, Input,
+  Button, Card, CardBody
+} from 'reactstrap';
 import './siparis.css'
-import { Button, DropdownItem, DropdownMenu, DropdownToggle, Form, FormGroup, Input, Label, UncontrolledDropdown } from "reactstrap";
 
-const toppings = [
-    'Pepperoni',
-    'Domates',
-    'Biber',
-    'Sosis',
-    'Mısır',
-    'Sucuk',
-    'Kanada Jambonu',
-    'Ananas',
-    'Tavuk Izgara',
-    'Jalepeno',
-    'Kabak',
-    'Soğan',
-    'Sarımsak',
-  ];
 
-  const base_price = 85.5
-  const topping_price = 5
-  const max_toppings= 10
-export default function Siparis() {
-    return (
-        <div className="order-container">
-         <header className="order-header">
-            <img className="logo" src="src/assets/iteration-1/logo.svg"/>
-             <nav className="breadcrumb">
-                 <a href="/">Anasayfa</a> – <a href="/">Seçenekler</a> – <span className='bold'>Sipariş Oluştur</span>
-             </nav>
-         </header>
+const TOPPINGS = [
+  'Pepperoni', 'Domates', 'Biber', 'Sosis', 'Mısır',
+  'Sucuk', 'Kanada Jambonu', 'Ananas', 'Tavuk Izgara',
+  'Jalapeno', 'Kabak', 'Soğan', 'Sarımsak'
+];
 
-        <main className="order-main">
-         <h2>Position Absolute Acı Pizza</h2>
-         <div className="price-rating">
-          <span className="price">{base_price}₺</span>
-          <span className="rating">4.9</span>
-          <span className="reviews">(200)</span>
+const OrderPizza = () => {
+  const [size, setSize] = useState('');           
+  const [dough, setDough] = useState('');         
+  const [toppings, setToppings] = useState([]);   
+  const [note, setNote] = useState('');           
+  const [quantity, setQuantity] = useState(1);   
+
+  const basePrice = 85.50;  
+  const toppingPrice = 5;   
+
+  const toggleTopping = (item) => {
+    if (toppings.includes(item)) {
+      setToppings(toppings.filter(topping => topping !== item));
+    } else if (toppings.length < 10) {
+      setToppings([...toppings, item]);
+    }
+  };
+
+  const increaseQty = () => setQuantity(sayı => sayı + 1);
+  const decreaseQty = () => setQuantity(sayı => (sayı > 1 ? sayı - 1 : 1));
+
+  const selectedCount = toppings.length;
+  const selectionsCost = selectedCount * toppingPrice;
+  const totalPrice = (basePrice + selectionsCost) * quantity;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ size, dough, toppings, note, quantity, totalPrice });
+  };
+
+  return (
+    <>
+      <div className='header'>
+        <img src='src/assets/iteration-1/logo.svg'/>
+        <Breadcrumb className='breadcrumb'>
+          <BreadcrumbItem><a href="/">Anasayfa</a></BreadcrumbItem>
+          <BreadcrumbItem><a href="#">Seçenekler</a></BreadcrumbItem>
+          <BreadcrumbItem active>Sipariş Oluştur</BreadcrumbItem>
+        </Breadcrumb>
         </div>
-        <p className="description">
-          Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.
-        </p>
-        </main>
-        <Form className="order-form">
-            <FormGroup tag="fieldset" className="order-boyut">
-                <legend>
-                Boyut Seç
-                </legend>
-                <FormGroup check>
-                <Input
-                    name="küçük"
-                    type="radio"
-                />
-                {' '}
-                <Label check>
-                    Küçük
-                </Label>
+        <div className='megaDiv'>
+        <div className="pizza-bilgileri">
+            <h5 className='pizza-baslik'>Position Absolute Acı Pizza</h5>
+            <div className='pizza-rating'>
+                <h3>{basePrice}</h3>
+                <p>4.9 (200)</p>
+            </div>
+            <p className='description'>Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza,
+          domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
+          odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
+          hamurdan oluşan İtalyan kökenli lezzetli bir yemektir.</p>
+        </div>
+
+        <Form onSubmit={handleSubmit}>
+
+         <div className='form-row'>
+            <FormGroup tag="fieldset" className='boyut'>
+                <legend className="doughSize">Boyut Seç *</legend>
+                {['Küçük', 'Orta', 'Büyük'].map(elm => (
+                <FormGroup check  key={elm}>
+                    <Label check>
+                    <Input
+                        type="radio"
+                        name="size"
+                        value={elm}
+                        checked={size === elm}
+                        onChange={e => setSize(e.target.value)}
+                    />{' '}{elm}
+                    </Label>
                 </FormGroup>
-                <FormGroup check>
-                <Input
-                    name="orta"
-                    type="radio"
-                />
-                {' '}
-                <Label check>
-                    Orta
-                </Label>
-                </FormGroup>
-                <FormGroup check>
-                <Input
-                    name="büyük"
-                    type="radio"
-                />
-                {' '}
-                <Label check>
-                    Büyük
-                </Label>
-                </FormGroup>
+                ))}
             </FormGroup>
 
-            <UncontrolledDropdown group>
-                <Button color="primary">
-                    Hamur Seç
-                </Button>
-                <DropdownToggle
-                    caret
-                    color="primary"
-                />
-                <DropdownMenu>
-                    <DropdownItem>
-                    İncecik Hamur
-                    </DropdownItem>
-                    <DropdownItem>
-                    Normal Hamur
-                    </DropdownItem>
-                    <DropdownItem>
-                    Kalın Hamur
-                    </DropdownItem>
-                </DropdownMenu>
-                </UncontrolledDropdown>
+            <FormGroup className='hamur'>
+                <Label for="dough">Hamur Seç *</Label>
+                <Input
+                type="select"
+                id="dough"
+                value={dough}
+                onChange={e => setDough(e.target.value)}
+                >
+                <option value="">Hamur Kalınlığı</option>
+                <option value="İnce">İnce</option>
+                <option value="Orta">Orta</option>
+                <option value="Kalın">Kalın</option>
+                </Input>
+            </FormGroup>
+        </div> 
+         
+
+          <FormGroup>
+            <Label><h5>Ek Malzemeler: <strong>{selectedCount}/10</strong></h5></Label>
+            <p>En Fazla 10 Malzeme Seçebilirsiniz 5₺</p>
+            <div className='toppings-grid'>
+              {TOPPINGS.map(item => (
+                <FormGroup check key={item} className="toppings">
+                  <Label check>
+                    <Input
+                      type="checkbox"
+                      value={item}
+                      checked={toppings.includes(item)}
+                      onChange={() => toggleTopping(item)}
+                    />{' '}{item}
+                  </Label>
+                </FormGroup>
+              ))}
+            </div>
+          </FormGroup>
+
+          <FormGroup className='siparis-notu'>
+            <Label htmlFor="note"><h5>Sipariş Notu</h5></Label>
+            <Input
+              type="textarea"
+              id="note"
+              value={note}
+              onChange={e => setNote(e.target.value)}
+              placeholder="Siparişine eklemek istediğin bir not var mı?"
+            />
+          </FormGroup>
+
+          <Row className="miktar">            
+            <Col>
+              <Label>Miktar</Label>
+              <div>
+                <Button onClick={decreaseQty} outline>-</Button>
+                <span className="mx-3">{quantity}</span>
+                <Button onClick={increaseQty} outline>+</Button>
+              </div>
+            </Col>
+            </Row>
+
+            <Col md="6" className='pencere'>
+              <Card>
+                <CardBody>
+                  <h5>Sipariş Toplamı</h5>
+                  <p>Seçimler: {selectionsCost}₺</p>
+                  <h4 className="text-danger">Toplam: {totalPrice}₺</h4>
+                  <Button color="warning" block>SİPARİŞ VER</Button>
+                </CardBody>
+              </Card>
+            </Col>
         </Form>
-          
-      </div>
-    )
-}
+        </div>
+        
+    </>
+  );
+};
+
+export default OrderPizza;
