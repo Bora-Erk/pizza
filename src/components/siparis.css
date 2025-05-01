@@ -24,10 +24,16 @@ body {
     text-decoration: none;
     color: white;
 }
-
+.pizza-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .pizza-rating {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    width: 100px;
 }
 .pizza-baslik {
     padding-bottom: 1rem;
@@ -36,8 +42,8 @@ body {
     padding-top: 1rem;
 }
 .megaDiv {
-    padding-left: 23rem;
-    padding-right: 23rem;
+    padding-left: 37rem;
+    padding-right: 37rem;
 }
 .form-row {
     display: flex;
@@ -73,7 +79,7 @@ body {
   }
   
  .miktar-button {
-    
+
  } 
   .miktar {
     flex: 1;                  

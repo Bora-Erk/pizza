@@ -57,9 +57,13 @@ const OrderPizza = () => {
         <div className='megaDiv'>
         <div className="pizza-bilgileri">
             <h5 className='pizza-baslik'>Position Absolute Acı Pizza</h5>
-            <div className='pizza-rating'>
-                <h3>{basePrice}₺</h3>
-                <p>4.9 (200)</p>
+            <div className='pizza-price'>
+                <h3><strong>{basePrice}</strong>₺</h3>
+                <div className='pizza-rating'>
+                <p>4.9 </p>
+                <p>(200)</p>
+                </div>
+                 
             </div>
             <p className='description'>Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza,
           domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
@@ -71,7 +75,7 @@ const OrderPizza = () => {
 
          <div className='form-row'>
             <FormGroup tag="fieldset" className='boyut'>
-                <legend className="doughSize">Boyut Seç *</legend>
+                <h5 className="doughSize">Boyut Seç <span style={{color: "red"}}>*</span></h5>
                 {['Küçük', 'Orta', 'Büyük'].map(elm => (
                 <FormGroup check  key={elm}>
                     <Label check>
@@ -88,7 +92,7 @@ const OrderPizza = () => {
             </FormGroup>
 
             <FormGroup className='hamur'>
-                <Label for="dough">Hamur Seç *</Label>
+                <h5 for="dough">Hamur Seç <span style={{color: "red"}}>*</span></h5>
                 <Input
                 type="select"
                 id="dough"
