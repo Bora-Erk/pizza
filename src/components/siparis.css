@@ -36,8 +36,8 @@ body {
     padding-top: 1rem;
 }
 .megaDiv {
-    padding-left: 20rem;
-    padding-right: 20rem;
+    padding-left: 23rem;
+    padding-right: 23rem;
 }
 .form-row {
     display: flex;
@@ -51,6 +51,10 @@ body {
   min-width: 200px;     
 }
 
+.toppings-form {
+    padding-top: 2rem
+}
+
 .toppings-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -58,3 +62,26 @@ body {
     row-gap: 0.5rem;
     margin-top: 0.5rem;
 }
+
+.siparis-notu {
+    padding-top: 2rem;
+}
+.order-row {
+    display: flex;
+    align-items: flex-start;  
+    gap: 1rem;                
+  }
+  
+ .miktar-button {
+    
+ } 
+  .miktar {
+    flex: 1;                  
+    min-width: 200px;         
+  }
+  
+  .pencere {
+    flex: 1;
+    min-width: 300px;
+  }
+  

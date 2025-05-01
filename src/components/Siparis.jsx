@@ -58,7 +58,7 @@ const OrderPizza = () => {
         <div className="pizza-bilgileri">
             <h5 className='pizza-baslik'>Position Absolute Acı Pizza</h5>
             <div className='pizza-rating'>
-                <h3>{basePrice}</h3>
+                <h3>{basePrice}₺</h3>
                 <p>4.9 (200)</p>
             </div>
             <p className='description'>Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza,
@@ -104,7 +104,7 @@ const OrderPizza = () => {
         </div> 
          
 
-          <FormGroup>
+          <FormGroup className='toppings-form'>
             <Label><h5>Ek Malzemeler: <strong>{selectedCount}/10</strong></h5></Label>
             <p>En Fazla 10 Malzeme Seçebilirsiniz 5₺</p>
             <div className='toppings-grid'>
@@ -134,27 +134,27 @@ const OrderPizza = () => {
             />
           </FormGroup>
 
-          <Row className="miktar">            
-            <Col>
-              <Label>Miktar</Label>
-              <div>
-                <Button onClick={decreaseQty} outline>-</Button>
+        <div className="order-row">
+            <div className="miktar">
+            <Label>Miktar</Label>
+            <div className='miktar-button'>
+                <Button color="warning" onClick={decreaseQty}>-</Button>
                 <span className="mx-3">{quantity}</span>
-                <Button onClick={increaseQty} outline>+</Button>
-              </div>
-            </Col>
-            </Row>
+                <Button color="warning" onClick={increaseQty}>+</Button>
+            </div>
+            </div>
 
-            <Col md="6" className='pencere'>
-              <Card>
+            <div className="pencere">
+            <Card>
                 <CardBody>
-                  <h5>Sipariş Toplamı</h5>
-                  <p>Seçimler: {selectionsCost}₺</p>
-                  <h4 className="text-danger">Toplam: {totalPrice}₺</h4>
-                  <Button color="warning" block>SİPARİŞ VER</Button>
+                <h5>Sipariş Toplamı</h5>
+                <p>Seçimler: {selectionsCost}₺</p>
+                <h4 className="text-danger">Toplam: {totalPrice}₺</h4>
+                <Button color="warning" block>SİPARİŞ VER</Button>
                 </CardBody>
-              </Card>
-            </Col>
+            </Card>
+            </div>
+        </div>
         </Form>
         </div>
         
