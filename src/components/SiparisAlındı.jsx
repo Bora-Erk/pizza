@@ -33,7 +33,6 @@ export default function SiparisAlındı() {
             <p>Hamur: {data.dough}</p>
             <p>Ek malzemeler: {data.toppings.join(", ")}</p>
             <p>Not: {data.note || "-"}</p>
-            <p>Miktar: {data.quantity}</p>
         </div>
         <div className="order-summary">
             <h6>Sipariş Toplamı</h6>

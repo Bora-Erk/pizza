@@ -1,13 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .siparis-alindi {
   display: flex;
   background-color: #CE2829;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   color: white;
-  height:  100vh;
+  min-height:  100vh;
   width: 100%;
+  padding-top: 22vh
 }
 .siparis-alindi img {
   position: absolute;
@@ -42,8 +48,10 @@
 .order-details {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  text-align: left;
+  align-items: flex-start;
   margin-bottom: 2rem;
+  width: 20vw;
 }
 
 .order-summary {
