@@ -154,8 +154,8 @@ const OrderPizza = () => {
                 <h5>Sipariş Toplamı</h5>
                 <p>Seçimler: {selectionsCost}₺</p>
                 <h4 className="text-danger">Toplam: {totalPrice}₺</h4>
-                <Link to='siparisAlındı'>
-                    <Button className='siparisVerButton'color="warning" block>SİPARİŞ VER</Button>
+                <Link to='/siparisAlındı'>
+                <Button type='submit' className='siparisVerButton'color="warning" block>SİPARİŞ VER</Button>
                 </Link>
                 </CardBody>
             </Card>

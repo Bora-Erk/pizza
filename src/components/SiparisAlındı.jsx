@@ -9,8 +9,18 @@ export default function SiparisAlındı() {
                 <Link to='/'>
                     <img src='src/assets/iteration-1/logo.svg'/>
                 </Link>
-                
-                <h1>TEBRİKLER! <br />SİPARİŞİNİZ ALINDI!</h1>
+                <div>
+                    <p>lezzetin yolda</p>
+                    <h1>SİPARİŞ ALINDI</h1>
+                </div>
+                <hr/>
+                <p>Position Absolute Acı Pizza</p>
+
+                <div>
+                    <p>Boyut:</p>
+                    <p>Hamur:</p>
+                    <p>Ek malzemeler</p>
+                </div>
             </div>
             
         </>
