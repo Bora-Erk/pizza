@@ -6,7 +6,8 @@ import {
   Button, Card, CardBody
 } from 'reactstrap';
 import './siparis.css'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 
 const TOPPINGS = [
@@ -20,7 +21,8 @@ const OrderPizza = () => {
   const [dough, setDough] = useState('');         
   const [toppings, setToppings] = useState([]);   
   const [note, setNote] = useState('');           
-  const [quantity, setQuantity] = useState(1);   
+  const [quantity, setQuantity] = useState(1); 
+  const history = useHistory();  
 
   const basePrice = 85.50;  
   const toppingPrice = 5;   
@@ -42,7 +44,25 @@ const OrderPizza = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ size, dough, toppings, note, quantity, totalPrice });
+    const orderData = { size, dough, toppings, note, quantity, selectionsCost, totalPrice };
+  
+    axios
+      .post(
+        'https://reqres.in/api/pizza',
+        orderData,
+        {
+          headers: {
+            'x-api-key': 'reqres-free-v1'
+          }
+        }
+      )
+      .then(response => {
+        console.log(response.data);
+        history.push('/siparisAlındı', response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 
   return (
@@ -154,9 +174,9 @@ const OrderPizza = () => {
                 <h5>Sipariş Toplamı</h5>
                 <p>Seçimler: {selectionsCost}₺</p>
                 <h4 className="text-danger">Toplam: {totalPrice}₺</h4>
-                <Link to='/siparisAlındı'>
+                
                 <Button type='submit' className='siparisVerButton'color="warning" block>SİPARİŞ VER</Button>
-                </Link>
+                
                 </CardBody>
             </Card>
             </div>

@@ -1,28 +1,41 @@
 import React from "react";
-import './SiparisAlındı.css'
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation, Link } from "react-router-dom";
+import "./SiparisAlındı.css";
+
+
 export default function SiparisAlındı() {
+  const location = useLocation();
+  const data = location.state;
+
+  if (!data) {
     return (
-        <>
+      <div className="siparis-alindi">
+        <p>Gösterilecek sipariş bilgisi yok.</p>
+        <Link to="/">Anasayfaya dön</Link>
+      </div>
+    );
+  }
 
-            <div className="siparis-alindi">
-                <Link to='/'>
-                    <img src='src/assets/iteration-1/logo.svg'/>
-                </Link>
-                <div>
-                    <p>lezzetin yolda</p>
-                    <h1>SİPARİŞ ALINDI</h1>
-                </div>
-                <hr/>
-                <p>Position Absolute Acı Pizza</p>
+  return (
+    <div className="siparis-alindi">
+      <Link to="/">
+        <img src='src/assets/iteration-1/logo.svg' alt="Logo" />
+      </Link>
+      <h1>Tebrikler, siparişiniz alındı!</h1>
 
-                <div>
-                    <p>Boyut:</p>
-                    <p>Hamur:</p>
-                    <p>Ek malzemeler</p>
-                </div>
-            </div>
-            
-        </>
-    )
+      <div className="order-details">
+        <p>Boyut: {data.size}</p>
+        <p>Hamur: {data.dough}</p>
+        <p>Ek malzemeler: {data.toppings.join(", ")}</p>
+        <p>Not: {data.note || "-"}</p>
+        <p>Miktar: {data.quantity}</p>
+        <div className="order-summary">
+            <h6>Sipariş Toplamı</h6>
+            <p>Seçimler: {data.selectionsCost}₺</p>
+            <p>Toplam Fiyat: {data.totalPrice}₺</p>
+        </div>
+        
+      </div>
+    </div>
+  );
 }
