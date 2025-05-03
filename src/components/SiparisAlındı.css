@@ -51,7 +51,7 @@ html, body {
   text-align: left;
   align-items: flex-start;
   margin-bottom: 2rem;
-  width: 20vw;
+  width: 21vw;
 }
 
 .order-summary {
@@ -92,6 +92,7 @@ html, body {
 
 .order-toppings #toppings {
   font-weight: 200;
+  width: 110px;
 }
 .order-toppings #data-toppings {
   display: flex;

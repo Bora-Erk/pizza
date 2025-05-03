@@ -30,6 +30,11 @@ body {
     justify-content: space-between;
     width: 25vw;
 }
+
+.pizza-price p {
+    font-weight: 200;
+    color: grey;
+}
 .pizza-rating {
     display: flex;
     justify-content: space-between;
@@ -42,6 +47,10 @@ body {
 .description {
     padding-top: 1rem;
     width: 25vw;
+}
+.description #metin {
+    font-weight: 200;
+    color: grey;
 }
 .megaDiv {
     display: flex;

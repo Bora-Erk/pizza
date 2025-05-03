@@ -76,7 +76,10 @@ const OrderPizza = () => {
         </Breadcrumb>
         </div>
         <div className='megaDiv'>
+          <div className="baslik">
             <h5 className='pizza-baslik'>Position Absolute Acı Pizza</h5>
+          </div>
+            
             <div className='pizza-price'>
                 <h3><strong>{basePrice}</strong>₺</h3>
                 <div className='pizza-rating'>
@@ -85,10 +88,13 @@ const OrderPizza = () => {
                 </div>
                  
             </div>
-            <p className='description'>Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza,
+            <div className="description">
+            <p id='metin'>Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza,
           domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
           odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
           hamurdan oluşan İtalyan kökenli lezzetli bir yemektir.</p>
+            </div>
+            
         
 
         <Form onSubmit={handleSubmit}>
