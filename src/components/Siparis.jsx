@@ -151,6 +151,7 @@ const OrderPizza = () => {
             <Label htmlFor="note"><h5>Sipariş Notu</h5></Label>
             <Input
               type="textarea"
+              name='SiparisNotu'
               id="note"
               value={note}
               onChange={e => setNote(e.target.value)}
