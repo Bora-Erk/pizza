@@ -38,7 +38,7 @@ export default function SiparisAlındı() {
             <p>{data.dough}</p>
           </div>
           <div className="order-toppings">
-            <p id='toppings'>Ek malzemeler: </p> 
+            <p id='toppings'>Malzemeler: </p> 
             <p id='data-toppings'>{data.toppings.join(", ")}</p>
           </div>
           <div className="order-note">

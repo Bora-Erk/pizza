@@ -105,32 +105,48 @@ body {
   }
   
   @media (max-width: 768px) {
+    .header img {
+        width: 60%;
+    }
+    .header .breadcrumb {
+        font-size: 0.6rem;
+    }
     .description {
         width: 60%;
+    }
+
+    .pizza-price {
+        display: flex;
+        width: 60%;
+        gap: 1rem;
     }
     .form-row {
         width: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 6rem;
+        text-align: center;
+        padding-left: 5rem;
     }
     .toppings-form {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        text-align: center;
         width: 60%;
-        padding-left: 4rem;
+        padding-left: 3rem;
     }
 
     .siparis-notu {
         width: 80%;
         padding-left: 4rem;
+        text-align: center;
     }
     .order-row {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
   }

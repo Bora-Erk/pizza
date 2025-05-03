@@ -133,3 +133,18 @@ html, body {
   font-weight: 550;
   color: white;
 }
+@media (max-width: 768px) {
+  .siparis-alindi img {
+    width: 50vw;
+  }
+  .siparis-alindi h1 {
+    font-size: 2rem;
+    width: 80vw;
+  }
+.order-details {
+  width: 70vw;
+}
+.order-summary {
+  width: 70vw;
+}
+}
