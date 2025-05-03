@@ -55,10 +55,38 @@ html, body {
 }
 
 .order-summary {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 2.5rem;
+  width: 20vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border: 1px solid white;
-  padding: 1.5rem 2rem
+  gap: 5px;
+  margin-bottom: 3rem;
   
+}
+.secimler {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Barlow";
+  color: white;
+  font-weight: 550;
+  font-size: 18px;
+
+}
+.totalPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  font-family: "Barlow";
+  font-weight: 550;
+  font-size: 18px;
+}
+.toplamHeader2 {
+  font-family: "Barlow";
+  font-size: 20px;
+  font-weight: 550;
+  color: white;
 }

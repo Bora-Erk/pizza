@@ -35,9 +35,16 @@ export default function SiparisAlındı() {
             <p>Not: {data.note || "-"}</p>
         </div>
         <div className="order-summary">
-            <h6>Sipariş Toplamı</h6>
-            <p>Seçimler: {data.selectionsCost}₺</p>
-            <p>Toplam Fiyat: {data.totalPrice}₺</p>
+            <h6 className="toplamHeader2">Sipariş Toplamı</h6>
+            <div className="secimler">
+                <p>Seçimler: </p>
+                <p>{data.selectionsCost}₺</p>
+            </div>
+            <div className="totalPrice">
+                <p>Toplam Fiyat: </p>
+                <p>{data.totalPrice}₺</p>
+            </div>
+            
         </div>
         
       
