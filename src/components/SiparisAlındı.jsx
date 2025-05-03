@@ -7,14 +7,7 @@ export default function SiparisAlındı() {
   const location = useLocation();
   const data = location.state;
 
-  if (!data) {
-    return (
-      <div className="siparis-alindi">
-        <p>Gösterilecek sipariş bilgisi yok.</p>
-        <Link to="/">Anasayfaya dön</Link>
-      </div>
-    );
-  }
+
 
   return (
     <div className="siparis-alindi">
