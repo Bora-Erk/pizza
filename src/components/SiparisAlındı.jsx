@@ -29,10 +29,23 @@ export default function SiparisAlındı() {
       
 
         <div className="order-details">
-            <p>Boyut: {data.size}</p>
-            <p>Hamur: {data.dough}</p>
-            <p>Ek malzemeler: {data.toppings.join(", ")}</p>
-            <p>Not: {data.note || "-"}</p>
+          <div className="order-size">
+            <p id='boyut'>Boyut: </p>
+            <p>{data.size}</p>
+          </div>
+          <div className="order-dough">
+            <p id='dough'>Hamur: </p> 
+            <p>{data.dough}</p>
+          </div>
+          <div className="order-toppings">
+            <p id='toppings'>Ek malzemeler: </p> 
+            <p id='data-toppings'>{data.toppings.join(", ")}</p>
+          </div>
+          <div className="order-note">
+            <p id='note'>Not: </p>
+            <p>{data.note || "-"}</p>
+          </div>
+            
         </div>
         <div className="order-summary">
             <h6 className="toplamHeader2">Sipariş Toplamı</h6>

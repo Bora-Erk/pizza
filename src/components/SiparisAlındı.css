@@ -65,6 +65,48 @@ html, body {
   margin-bottom: 3rem;
   
 }
+.order-size {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.order-size #boyut {
+  font-weight: 200;
+}
+
+.order-dough {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.order-dough #dough {
+  font-weight: 200;
+}
+
+.order-toppings {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.order-toppings #toppings {
+  font-weight: 200;
+}
+.order-toppings #data-toppings {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order-note{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.order-note #note {
+  font-weight: 200;
+}
 .secimler {
   display: flex;
   flex-direction: row;
